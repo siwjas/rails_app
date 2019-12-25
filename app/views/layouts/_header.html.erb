@@ -1,3 +1,34 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to 'Contact List', root_url, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Nova Conta', new_user_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Ação</a>
+          <a class="dropdown-item" href="#">Outra ação</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Algo mais aqui</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item active">
+        <%= link_to 'Entrar', '#', class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- ################################################## -->
 <nav class="navbar navbar-inverse navbar-static-top">
 
   <div class="container-fluid">
@@ -16,7 +47,7 @@
     <ul class="nav navbar-nav">
 
       <li class="active">
-        <a href="#">Nova Conta</a>
+        <%= link_to 'Nova Conta', new_user_path %>
       </li>
 
     </ul>
