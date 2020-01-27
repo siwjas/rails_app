@@ -1,67 +1,41 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <%= link_to 'Contact List', root_url, class: 'navbar-brand' %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <%= link_to 'Contact List', root_url, class: 'navbar-brand' %>
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Nova Conta', new_user_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ação</a>
-          <a class="dropdown-item" href="#">Outra ação</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Algo mais aqui</a>
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item active">
-        <%= link_to 'Entrar', '#', class: 'nav-link' %>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- ################################################## -->
-<nav class="navbar navbar-inverse navbar-static-top">
-
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#expanded-menu" aria-expanded=" false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Contact List', root_url, class: 'navbar-brand' %>
-    </div>
-
-  <!-- Conteudo exibido em telas maiores e que serao escondidos em telas menores -->
-  <div class="collapse navbar-collapse" id="expanded-menu">
-    <ul class="nav navbar-nav">
-
-      <li class="active">
-        <%= link_to 'Nova Conta', new_user_path %>
-      </li>
-
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-
-        <li>
-          <%= link_to 'Entrar', '#' %>
+      <% if !user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to 'Nova Conta', new_user_path, class: 'nav-link' %>
         </li>
+      <% end %>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      -->
 
     </ul>
-
+    <ul class="nav navbar-nav navbar-inline">
+      <% if !user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to 'Entrar', entrar_path, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Bem-vindo, <%= current_user.name %> <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'Perfil', current_user, class: 'dropdown-item' %>
+              <%= link_to 'Editar', '#', class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Sair', sair_path, method: :delete, class: 'dropdown-item' %>
+            </div>
+          </li>
+      </ul>
+    <% end %>
   </div>
-
-  </div>
-
 </nav>
