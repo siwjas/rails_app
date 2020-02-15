@@ -5,6 +5,14 @@
   </p>
 
   <p>
-    <%= link_to 'Crie sua Conta', new_user_path, class: 'btn btn-primary btn-lg' %>
+   <% if user_signed_in? %>
+
+      <%= link_to 'Meus Contatos', contacts_path, class: 'btn btn-success btn-lg' %>
+
+    <% else %>
+
+      <%= link_to 'Crie sua Conta', new_user_path, class: 'btn btn-primary btn-lg' %>
+
+    <% end %>
   </p>
 </div>

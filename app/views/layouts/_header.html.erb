@@ -25,6 +25,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'Perfil', current_user, class: 'dropdown-item' %>
               <%= link_to 'Editar', '#', class: 'dropdown-item' %>
+              <%= link_to 'Contatos', contacts_path, class: 'dropdown-item' %>
               <div class="dropdown-divider"></div>
               <strong><%= link_to 'Sair', sair_path, method: :delete, class: 'dropdown-item out' %></strong>
             </div>

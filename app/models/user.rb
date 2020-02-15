@@ -8,5 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 40 },
                                     format: { with: VALID_EMAIL_REGEX },
                                     uniqueness: { case_sensitive: true }
+  
+  has_many :contacts
 
 end
