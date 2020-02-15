@@ -1,5 +1,14 @@
 $gray-medium-light: #EAEAEA;
 
+li .dropdown-item:hover {
+  color: #ffcc00;
+}
+
+li a.out:hover {
+  color: red;
+  font-weight: bold;
+}
+
 footer {
   margin-top: 45px;
   padding-top: 10px;

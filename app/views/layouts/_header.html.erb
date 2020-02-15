@@ -11,12 +11,6 @@
           <%= link_to 'Nova Conta', new_user_path, class: 'nav-link' %>
         </li>
       <% end %>
-      <!--
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      -->
-
     </ul>
     <ul class="nav navbar-nav navbar-inline">
       <% if !user_signed_in? %>
@@ -32,7 +26,7 @@
               <%= link_to 'Perfil', current_user, class: 'dropdown-item' %>
               <%= link_to 'Editar', '#', class: 'dropdown-item' %>
               <div class="dropdown-divider"></div>
-              <%= link_to 'Sair', sair_path, method: :delete, class: 'dropdown-item' %>
+              <strong><%= link_to 'Sair', sair_path, method: :delete, class: 'dropdown-item out' %></strong>
             </div>
           </li>
       </ul>
